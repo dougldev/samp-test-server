@@ -8,6 +8,8 @@
 #define COR_VERMELHA 0xFF0000FF
 #define COR_AMARELA 0xFFFF00FF
 
+//	Desenvolvedor Doug
+
 #define function0%(1%) forward 0%(%1); public 0%(%1)
 
 new Float:SpawnMotos[9][4] = {
