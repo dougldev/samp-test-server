@@ -35,7 +35,7 @@ enum SAZONE_MAIN { //Betamaster
 
 static const gSAZones[][SAZONE_MAIN] = {  // Majority of names and area coordinates adopted from Mabako's 'Zones Script' v0.2
 	//	NAME                            AREA (Xmin,Ymin,Zmin,Xmax,Ymax,Zmax)
-        {"Ilha Admin",	                {3314.2061,2260.1619,3503.9478,2427.7273,200.00}},
+    {"Ilha Admin",	                {3314.2061,2260.1619,3503.9478,2427.7273,200.00}},
 	{"The Big Ear",	                {-410.00,1403.30,-3.00,-137.90,1681.20,200.00}},
 	{"Aldea Malvada",               {-1372.10,2498.50,0.00,-1277.50,2615.30,200.00}},
 	{"Angel Pine",                  {-2324.90,-2584.20,-6.10,-1964.20,-2212.10,200.00}},

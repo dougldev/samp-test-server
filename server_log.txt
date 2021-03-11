@@ -119174,3 +119174,466 @@ v0.3.7-R2, (C)2005-2015 SA-MP Team
 
 *** Streamer Plugin v2.9.4 by Incognito unloaded ***
 
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[11:57:27] filterscripts = ""  (string)
+[11:57:27] 
+[11:57:27] Server Plugins
+[11:57:27] --------------
+[11:57:27]  Loading plugin: sscanf
+[11:57:27] 
+
+[11:57:27]  ===============================
+
+[11:57:27]       sscanf plugin loaded.     
+
+[11:57:27]          Version:  2.8.2        
+
+[11:57:27]    (c) 2012 Alex "Y_Less" Cole  
+
+[11:57:27]  ===============================
+
+[11:57:27]   Loaded.
+[11:57:27]  Loading plugin: streamer
+[11:57:27] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[11:57:27]   Loaded.
+[11:57:27]  Loaded 2 plugins.
+
+[11:57:27] 
+[11:57:27] Filterscripts
+[11:57:27] ---------------
+[11:57:27]   Loaded 0 filterscripts.
+
+[11:57:27] Number of vehicle models: 0
+[11:57:31] --- Server Shutting Down.
+[11:57:31] 
+
+[11:57:31]  ===============================
+
+[11:57:31]      sscanf plugin unloaded.    
+
+[11:57:31]  ===============================
+
+[11:57:31] 
+
+*** Streamer Plugin v2.9.4 by Incognito unloaded ***
+
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[11:58:21] filterscripts = ""  (string)
+[11:58:21] 
+[11:58:21] Server Plugins
+[11:58:21] --------------
+[11:58:21]  Loading plugin: sscanf
+[11:58:21] 
+
+[11:58:21]  ===============================
+
+[11:58:21]       sscanf plugin loaded.     
+
+[11:58:21]          Version:  2.8.2        
+
+[11:58:21]    (c) 2012 Alex "Y_Less" Cole  
+
+[11:58:21]  ===============================
+
+[11:58:21]   Loaded.
+[11:58:21]  Loading plugin: streamer
+[11:58:21] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[11:58:21]   Loaded.
+[11:58:21]  Loaded 2 plugins.
+
+[11:58:21] 
+[11:58:21] Filterscripts
+[11:58:21] ---------------
+[11:58:21]   Loaded 0 filterscripts.
+
+[11:58:21] Number of vehicle models: 0
+[12:00:13] [connection] 127.0.0.1:52425 requests connection cookie.
+[12:00:14] [connection] incoming connection: 127.0.0.1:52425 id: 0
+[12:00:14] [join] Doug has joined the server (0:127.0.0.1)
+[12:00:30] [part] Doug has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[12:01:04] filterscripts = ""  (string)
+[12:01:04] 
+[12:01:04] Server Plugins
+[12:01:04] --------------
+[12:01:04]  Loading plugin: sscanf
+[12:01:04] 
+
+[12:01:04]  ===============================
+
+[12:01:04]       sscanf plugin loaded.     
+
+[12:01:04]          Version:  2.8.2        
+
+[12:01:04]    (c) 2012 Alex "Y_Less" Cole  
+
+[12:01:04]  ===============================
+
+[12:01:04]   Loaded.
+[12:01:04]  Loading plugin: streamer
+[12:01:04] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[12:01:04]   Loaded.
+[12:01:04]  Loaded 2 plugins.
+
+[12:01:04] 
+[12:01:04] Filterscripts
+[12:01:04] ---------------
+[12:01:04]   Loaded 0 filterscripts.
+
+[12:01:04] Number of vehicle models: 0
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[12:01:08] filterscripts = ""  (string)
+[12:01:08] 
+[12:01:08] Server Plugins
+[12:01:08] --------------
+[12:01:08]  Loading plugin: sscanf
+[12:01:08] 
+
+[12:01:08]  ===============================
+
+[12:01:08]       sscanf plugin loaded.     
+
+[12:01:08]          Version:  2.8.2        
+
+[12:01:08]    (c) 2012 Alex "Y_Less" Cole  
+
+[12:01:08]  ===============================
+
+[12:01:08]   Loaded.
+[12:01:08]  Loading plugin: streamer
+[12:01:08] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[12:01:08]   Loaded.
+[12:01:08]  Loaded 2 plugins.
+
+[12:01:08] 
+[12:01:08] Filterscripts
+[12:01:08] ---------------
+[12:01:08]   Loaded 0 filterscripts.
+
+[12:01:08] Number of vehicle models: 0
+[12:01:47] [connection] 127.0.0.1:56276 requests connection cookie.
+[12:01:48] [connection] incoming connection: 127.0.0.1:56276 id: 0
+[12:01:48] [join] Doug has joined the server (0:127.0.0.1)
+[12:03:19] RCON (In-Game): Player #0 (Doug) has logged in.
+[12:05:49] [part] Doug has left the server (0:1)
+[12:05:58] --- Server Shutting Down.
+[12:05:58] 
+
+[12:05:58]  ===============================
+
+[12:05:58]      sscanf plugin unloaded.    
+
+[12:05:58]  ===============================
+
+[12:05:58] 
+
+*** Streamer Plugin v2.9.4 by Incognito unloaded ***
+
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[12:10:59] filterscripts = ""  (string)
+[12:10:59] 
+[12:10:59] Server Plugins
+[12:10:59] --------------
+[12:10:59]  Loading plugin: sscanf
+[12:10:59] 
+
+[12:10:59]  ===============================
+
+[12:10:59]       sscanf plugin loaded.     
+
+[12:10:59]          Version:  2.8.2        
+
+[12:10:59]    (c) 2012 Alex "Y_Less" Cole  
+
+[12:10:59]  ===============================
+
+[12:10:59]   Loaded.
+[12:10:59]  Loading plugin: streamer
+[12:10:59] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[12:10:59]   Loaded.
+[12:10:59]  Loaded 2 plugins.
+
+[12:10:59] 
+[12:10:59] Filterscripts
+[12:10:59] ---------------
+[12:10:59]   Loaded 0 filterscripts.
+
+[12:10:59] Number of vehicle models: 0
+[12:11:17] [connection] 127.0.0.1:55831 requests connection cookie.
+[12:11:18] [connection] incoming connection: 127.0.0.1:55831 id: 0
+[12:11:19] [join] Doug has joined the server (0:127.0.0.1)
+[12:11:55] [part] Doug has left the server (0:1)
+[12:12:00] --- Server Shutting Down.
+[12:12:00] 
+
+[12:12:00]  ===============================
+
+[12:12:00]      sscanf plugin unloaded.    
+
+[12:12:00]  ===============================
+
+[12:12:00] 
+
+*** Streamer Plugin v2.9.4 by Incognito unloaded ***
+
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[18:37:56] filterscripts = ""  (string)
+[18:37:56] 
+[18:37:56] Server Plugins
+[18:37:56] --------------
+[18:37:56]  Loading plugin: sscanf
+[18:37:56] 
+
+[18:37:56]  ===============================
+
+[18:37:56]       sscanf plugin loaded.     
+
+[18:37:56]          Version:  2.8.2        
+
+[18:37:56]    (c) 2012 Alex "Y_Less" Cole  
+
+[18:37:56]  ===============================
+
+[18:37:56]   Loaded.
+[18:37:56]  Loading plugin: streamer
+[18:37:56] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[18:37:56]   Loaded.
+[18:37:56]  Loaded 2 plugins.
+
+[18:37:56] 
+[18:37:56] Filterscripts
+[18:37:56] ---------------
+[18:37:56]   Loaded 0 filterscripts.
+
+[18:37:56] Number of vehicle models: 0
+[18:38:18] [connection] 127.0.0.1:50599 requests connection cookie.
+[18:38:19] [connection] incoming connection: 127.0.0.1:50599 id: 0
+[18:38:19] [join] Doug has joined the server (0:127.0.0.1)
+[18:39:10] --- Server Shutting Down.
+[18:39:10] [part] Doug has left the server (0:0)
+[18:39:10] 
+
+[18:39:10]  ===============================
+
+[18:39:10]      sscanf plugin unloaded.    
+
+[18:39:10]  ===============================
+
+[18:39:10] 
+
+*** Streamer Plugin v2.9.4 by Incognito unloaded ***
+
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[19:10:20] filterscripts = ""  (string)
+[19:10:20] 
+[19:10:20] Server Plugins
+[19:10:20] --------------
+[19:10:20]  Loading plugin: sscanf
+[19:10:20] 
+
+[19:10:20]  ===============================
+
+[19:10:20]       sscanf plugin loaded.     
+
+[19:10:20]          Version:  2.8.2        
+
+[19:10:20]    (c) 2012 Alex "Y_Less" Cole  
+
+[19:10:20]  ===============================
+
+[19:10:20]   Loaded.
+[19:10:20]  Loading plugin: streamer
+[19:10:20] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[19:10:20]   Loaded.
+[19:10:20]  Loaded 2 plugins.
+
+[19:10:21] 
+[19:10:21] Filterscripts
+[19:10:21] ---------------
+[19:10:21]   Loaded 0 filterscripts.
+
+[19:10:21] Number of vehicle models: 0
+[19:10:41] [connection] 127.0.0.1:64763 requests connection cookie.
+[19:10:42] [connection] incoming connection: 127.0.0.1:64763 id: 0
+[19:10:43] [join] Doug has joined the server (0:127.0.0.1)
+Console input: gmx
+[19:13:18] Number of vehicle models: 0
+Console input: gmx
+[19:17:20] Number of vehicle models: 0
+Console input: gmx
+[19:18:57] Number of vehicle models: 0
+Console input: gmx
+[19:19:51] Number of vehicle models: 0
+[19:20:44] [part] Doug has left the server (0:1)
+Console input: gmx
+[19:21:41] Number of vehicle models: 0
+[19:21:52] [connection] 127.0.0.1:55068 requests connection cookie.
+[19:21:53] [connection] incoming connection: 127.0.0.1:55068 id: 0
+[19:21:53] [join] Doug has joined the server (0:127.0.0.1)
+Console input: gmx
+[19:51:10] Number of vehicle models: 0
+Console input: gmx
+[19:54:42] Number of vehicle models: 0
+Console input: gmx
+[19:58:16] Number of vehicle models: 0
+Console input: gmx
+[20:00:57] Number of vehicle models: 0
+[20:01:35] RCON (In-Game): Player #0 (Doug) has logged in.
+[20:04:20] [part] Doug has left the server (0:1)
+[20:04:59] [connection] 127.0.0.1:60539 requests connection cookie.
+[20:05:00] [connection] incoming connection: 127.0.0.1:60539 id: 0
+[20:05:00] [join] Doug has joined the server (0:127.0.0.1)
+Console input: gmx
+[20:12:54] Number of vehicle models: 1
+Console input: gmx
+[20:21:34] Number of vehicle models: 1
+[20:24:48] [part] Doug has left the server (0:1)
+[20:24:56] --- Server Shutting Down.
+[20:24:56] 
+
+[20:24:56]  ===============================
+
+[20:24:56]      sscanf plugin unloaded.    
+
+[20:24:56]  ===============================
+
+[20:24:56] 
+
+*** Streamer Plugin v2.9.4 by Incognito unloaded ***
+
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[20:50:18] filterscripts = ""  (string)
+[20:50:18] 
+[20:50:18] Server Plugins
+[20:50:18] --------------
+[20:50:18]  Loading plugin: sscanf
+[20:50:18] 
+
+[20:50:18]  ===============================
+
+[20:50:18]       sscanf plugin loaded.     
+
+[20:50:18]          Version:  2.8.2        
+
+[20:50:18]    (c) 2012 Alex "Y_Less" Cole  
+
+[20:50:18]  ===============================
+
+[20:50:18]   Loaded.
+[20:50:18]  Loading plugin: streamer
+[20:50:18] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[20:50:18]   Loaded.
+[20:50:18]  Loaded 2 plugins.
+
+[20:50:18] 
+[20:50:18] Filterscripts
+[20:50:18] ---------------
+[20:50:18]   Loaded 0 filterscripts.
+
+[20:50:18] Number of vehicle models: 1
+[20:50:39] [connection] 127.0.0.1:54834 requests connection cookie.
+[20:50:40] [connection] incoming connection: 127.0.0.1:54834 id: 0
+[20:50:40] [join] Doug has joined the server (0:127.0.0.1)
+[20:51:48] RCON (In-Game): Player #0 (Doug) has logged in.
+[20:52:58] [part] Doug has left the server (0:1)
+[20:54:29] --- Server Shutting Down.
+[20:54:29] 
+
+[20:54:29]  ===============================
+
+[20:54:29]      sscanf plugin unloaded.    
+
+[20:54:29]  ===============================
+
+[20:54:29] 
+
+*** Streamer Plugin v2.9.4 by Incognito unloaded ***
+

@@ -10,12 +10,27 @@
 
 #define function0%(1%) forward 0%(%1); public 0%(%1)
 
+new Float:SpawnMotos[9][4] = {
+	{1685.6113, -2299.3767, 13.5272, 180.8490},
+	{1682.6487, -2299.3792, 13.5272, 181.8580},
+	{1679.8433, -2299.1394, 13.5268, 180.3444},
+	{1679.9531, -2296.2283, 13.5249, 178.5426},
+	{1682.7946, -2296.0447, 13.5223, 178.1822},
+	{1685.5935, -2296.1855, 13.5225, 181.5697},
+	{1685.5657, -2293.5945, 13.5187, 180.4166},
+	{1682.7273, -2293.1355, 13.5180, 182.0743},
+	{1679.9514, -2293.0598, 13.5249, 178.1101}
+};
+
 enum pInfo
 {
+	pAdmin,
 	Float:Posx,
 	Float:Posy,
 	Float:Posz,
-	Float:Posr
+	Float:Posr,
+	pSkin,
+	pDinheiro
 }
 new DadosPlayer[MAX_PLAYERS][pInfo];
 
@@ -61,7 +76,7 @@ public OnPlayerRequestClass(playerid, classid)
 		ShowPlayerDialog(playerid, DIALOG_LOGIN, DIALOG_STYLE_PASSWORD, "Logar", String, "Logar", "Sair");
 	}
 	LimparChat(playerid);
-	SendClientMessage(playerid, 0x00FF00FF, "Bem-Vindo ao servidor.");
+	SendClientMessage(playerid, COR_VERDE, "[INFO]: Bem-Vindo ao servidor.");
 	InterpolateCameraPos(playerid, 1569.209594, -2317.554931, 21.128261, 1672.632080, -2306.287353, 16.502597, 20000);
 	InterpolateCameraLookAt(playerid, 1574.187500, -2317.540527, 20.658813, 1675.290405, -2310.505859, 16.133428, 15000);
 	//TogglePlayerSpectating(playerid, true);
@@ -82,10 +97,13 @@ public OnPlayerDisconnect(playerid, reason)
 		GetPlayerPos(playerid, DadosPlayer[playerid][Posx], DadosPlayer[playerid][Posy], DadosPlayer[playerid][Posz]);
 		GetPlayerFacingAngle(playerid, DadosPlayer[playerid][Posr]);
 
+		DOF2_SetInt(File, "Admin", DadosPlayer[playerid][pAdmin]);
 		DOF2_SetFloat(File, "PosX", DadosPlayer[playerid][Posx]);
 		DOF2_SetFloat(File, "PosY", DadosPlayer[playerid][Posy]);
 		DOF2_SetFloat(File, "PosZ", DadosPlayer[playerid][Posz]);
 		DOF2_SetFloat(File, "PosR", DadosPlayer[playerid][Posr]);
+		DOF2_SetInt(File, "Skin", GetPlayerSkin(playerid));
+		DOF2_SetInt(File, "Dinheiro", GetPlayerMoney(playerid));
 
 		DOF2_SaveFile();
 	}
@@ -94,10 +112,13 @@ public OnPlayerDisconnect(playerid, reason)
 		GetPlayerPos(playerid, DadosPlayer[playerid][Posx], DadosPlayer[playerid][Posy], DadosPlayer[playerid][Posz]);
 		GetPlayerFacingAngle(playerid, DadosPlayer[playerid][Posr]);
 
+		DOF2_SetInt(File, "Admin", DadosPlayer[playerid][pAdmin]);
 		DOF2_SetFloat(File, "PosX", DadosPlayer[playerid][Posx]);
 		DOF2_SetFloat(File, "PosY", DadosPlayer[playerid][Posy]);
 		DOF2_SetFloat(File, "PosZ", DadosPlayer[playerid][Posz]);
 		DOF2_SetFloat(File, "PosR", DadosPlayer[playerid][Posr]);
+		DOF2_SetInt(File, "Skin", GetPlayerSkin(playerid));
+		DOF2_SetInt(File, "Dinheiro", GetPlayerMoney(playerid));
 
 		DOF2_SaveFile();
 	}
@@ -106,6 +127,17 @@ public OnPlayerDisconnect(playerid, reason)
 
 public OnPlayerSpawn(playerid)
 {
+	new File[64];
+	format(File, sizeof(File), "Contas/%s.ini", PlayerName(playerid));
+	if(DOF2_FileExists(File))
+	{
+		DadosPlayer[playerid][pSkin] = DOF2_GetInt(File, "Skin");
+		DadosPlayer[playerid][pDinheiro] = DOF2_GetInt(File, "Dinheiro");
+		DadosPlayer[playerid][pAdmin] = DOF2_GetInt(File, "Admin");
+
+		GivePlayerMoney(playerid, DadosPlayer[playerid][pDinheiro]);
+		SetPlayerSkin(playerid, DadosPlayer[playerid][pSkin]);
+	}
 	return 1;
 }
 
@@ -140,8 +172,16 @@ public OnPlayerText(playerid, text[])
 			{
 				if(IsPlayerInRangeOfPoint(i, 30.0, Pos[0], Pos[1], Pos[2]))
 				{
-					format(String, sizeof(String), "{00FFFF}[{FFFFFF}%d{00FFFF}]{FFFFFF}%s: %s", playerid, PlayerName(playerid), text);
-					SendClientMessage(i, -1, String);
+					if(DadosPlayer[i][pAdmin] > 0)
+					{
+						format(String, sizeof(String), "{FF0000}[ADMIN]{00FFFF}[{FFFFFF}%d{00FFFF}]{FFFFFF}%s: %s", playerid, PlayerName(playerid), text);
+						SendClientMessage(i, -1, String);
+					}
+					else
+					{
+						format(String, sizeof(String), "{00FFFF}[{FFFFFF}%d{00FFFF}]{FFFFFF}%s: %s", playerid, PlayerName(playerid), text);
+						SendClientMessage(i, -1, String);
+					}
 				}
 			}
 			else
@@ -299,7 +339,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					format(String, sizeof(String), "{00FFFF}Nome: {FFFFFF}%s\n{FFFFFF}Registrado: {00FF00}Sim\n\n{FFFFFF}Digite sua senha para logar.", PlayerName(playerid));
 					ShowPlayerDialog(playerid, DIALOG_LOGIN, DIALOG_STYLE_PASSWORD, "Logar", String, "Logar", "Sair");
 				}
-				SendClientMessage(playerid, 0x00FF00FF, "[INFO]: Registrado com sucesso em nosso server!");
+				SendClientMessage(playerid, COR_VERDE, "[INFO]: Registrado com sucesso em nosso server!");
 				SetSpawnInfo(playerid, -1, 26, 1682.9807, -2328.2192, 13.5469, 358.8739, 0, 0, 0, 0, 0, 0);
 				SpawnPlayer(playerid);
 			}
@@ -324,21 +364,21 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 			{
 				if(strcmp(inputtext, DOF2_GetString(File, "Senha"), true) == 0)
 				{
-					SendClientMessage(playerid, 0x00FF00FF, "[INFO]: Voce efetuou o login com sucesso, diverta-se em nosso server!");
-					SendClientMessage(playerid, 0xFFFF00FF, "[AVISO]: Para poder voltar de onde parou utilize: /carregarposicao");
-					SetSpawnInfo(playerid, -1, 26, 1682.9807, -2328.2192, 13.5469, 358.8739, 0, 0, 0, 0, 0, 0);
+					SendClientMessage(playerid, COR_VERDE, "[INFO]: Voce efetuou o login com sucesso, diverta-se em nosso server!");
+					SendClientMessage(playerid, COR_AMARELA, "[AVISO]: Para poder voltar de onde parou utilize: /carregarposicao");
+					SetSpawnInfo(playerid, -1, DadosPlayer[playerid][pSkin], 1682.9807, -2328.2192, 13.5469, 358.8739, 0, 0, 0, 0, 0, 0);
 					SpawnPlayer(playerid);
 				}
 				else
 				{
-					SendClientMessage(playerid, 0xFF0000FF, "[ERRO]: Voce digitou uma senha invalida, tente novamente!");
+					SendClientMessage(playerid, COR_VERMELHA, "[ERRO]: Voce digitou uma senha invalida, tente novamente!");
 					format(String, sizeof(String), "{00FFFF}Nome: {FFFFFF}%s\n{FFFFFF}Registrado: {00FF00}Sim\n\n{FF0000}Senha incorreta.", PlayerName(playerid));
 					ShowPlayerDialog(playerid, DIALOG_LOGIN, DIALOG_STYLE_PASSWORD, "Logar", String, "Logar", "Sair");
 				}
 			}
 			else
 			{
-				SendClientMessage(playerid, 0xFF0000FF, "[ERRO]: Voce digitou uma senha invalida, tente novamente!");
+				SendClientMessage(playerid, COR_VERMELHA, "[ERRO]: Voce digitou uma senha invalida, tente novamente!");
 				format(String, sizeof(String), "{00FFFF}Nome: {FFFFFF}%s\n{FFFFFF}Registrado: {00FF00}Sim\n\n{FF0000}Senha incorreta, sua senha deve conter de 4 a 15 caracteres.", PlayerName(playerid));
 				ShowPlayerDialog(playerid, DIALOG_LOGIN, DIALOG_STYLE_PASSWORD, "Logar", String, "Logar", "Sair");
 			}
@@ -370,30 +410,26 @@ stock LimparChat(playerid)
 stock LobbySpawn()
 {
 	//		PICKUP PEGAR MOTO.
-	CreateDynamicPickup(1239, 0, 1687.2750, -2307.7085, 13.5394);
-	CreateDynamicActor(26, 1687.3225, -2307.0767, 13.5385, 175.4433, 1, 100.0);
-	CreateDynamic3DTextLabel("{00FF00}Digite: /moto\n{00FFFF}Para pegar uma moto publica.", -1, 1687.2750, -2307.7085, 13.5394, 15.0);
+	for(new i = 0; i < 9; i++)
+	{
+		CreateVehicle(462, SpawnMotos[i][0], SpawnMotos[i][1], SpawnMotos[i][2], SpawnMotos[i][3], -1, -1, 120);
+		CreateDynamic3DTextLabel("{00FFFF}MOTO PUBLICA\n{00FF00}SAINDO DELA VOCE TEM 2 MINUTOS", -1, 1682.6472, -2301.3606, 13.5301, 15.0);
+	}
 	return 1;
 }
 
 CMD:cv(playerid, params[])
 {
-	if(IsPlayerAdmin(playerid))
+	if(DadosPlayer[playerid][pAdmin] > 1)
 	{
 		new String[128], ID, Float:Pos[4], Cor[2]; GetPlayerPos(playerid, Pos[0], Pos[1], Pos[2]); GetPlayerFacingAngle(playerid, Pos[3]);
 		if(sscanf(params, "ddd", ID, Cor[0], Cor[1])) return SendClientMessage(playerid, 0xFF0000FF, "[ERRO] Digite: /cv [id] [cor1] [cor2].");
+		if(ID < 400 && ID > 611) return SendClientMessage(playerid, COR_VERMELHA, "[ERRO] Voce deve utilizar 400 a 611.");
 		new carro = CreateVehicle(ID, Pos[0], Pos[1], Pos[2], Pos[3], Cor[0], Cor[1], -1);
 		PutPlayerInVehicle(playerid, carro, 0);
 		format(String, sizeof(String), "{00FF00}Voce pegou um carro com id %d.", ID);
 		SendClientMessage(playerid, -1, String);
 	}
-	return 1;
-}
-
-CMD:arma(playerid)
-{
-	GivePlayerMoney(playerid, 100);
-	GivePlayerWeapon(playerid, 31, 100);
 	return 1;
 }
 
@@ -416,6 +452,38 @@ CMD:carregarposicao(playerid)
 	else
 	{
 		return SendClientMessage(playerid, COR_VERMELHA, "[ERRO]: Voce tem que desconnectar para ir ate a localizao que estava!");
+	}
+	return 1;
+}
+
+CMD:daradm(playerid, params[])
+{
+	new ID, NIVEL, String[180];
+	if(!IsPlayerAdmin(playerid)) return SendClientMessage(playerid, COR_VERMELHA, "[ERRO]: Voce nao e admin(Rcon).");
+	if(sscanf(params, "dd", ID, NIVEL)) return SendClientMessage(playerid, COR_VERMELHA, "[ERRO]: Digite: /daradm [id] [nivel].");
+	if(!IsPlayerConnected(ID)) return SendClientMessage(playerid, COR_VERMELHA, "[ERRO]: Jogador nao esta online.");
+	if(NIVEL >= 0 && NIVEL <= 5)
+	{
+		DadosPlayer[ID][pAdmin] = NIVEL;
+		if(DadosPlayer[ID][pAdmin] == 0)
+		{
+			format(String, sizeof(String), "[INFO]: Voce removeu o admin de %s.", PlayerName(ID));
+			SendClientMessage(playerid, COR_AMARELA, String);
+			format(String, sizeof(String), "[INFO]: Voce foi removido da staff por: %s", PlayerName(playerid));
+			SendClientMessage(playerid, COR_AMARELA, String);
+		}
+		else
+		{
+			format(String, sizeof(String), "[INFO]: Voce deu nivel %d de admin para %s.", NIVEL, PlayerName(ID));
+			SendClientMessage(playerid, COR_AMARELA, String);
+			format(String, sizeof(String), "[INFO]: Voce recebeu admin do %s, nivel de admin %d.", PlayerName(playerid), NIVEL);
+			SendClientMessage(playerid, COR_AMARELA, String);
+		}
+	}
+	else
+	{
+		SendClientMessage(playerid, COR_VERMELHA, "[ERRO]: Niveis de ADM[1 ao 5], digite novamente!");
+		return 1;
 	}
 	return 1;
 }
